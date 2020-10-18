@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container,Row } from 'react-bootstrap'
+import '../styles/AnimalContainer.css'
 import Animal from './Animal'
 
 export default function AnimalContainer({ animals }) {
@@ -7,6 +8,7 @@ export default function AnimalContainer({ animals }) {
     const displayAnimals = () => {
         return animals.map(animal => {
             return <Animal 
+                        key={animal.id}
                         name={animal.name} 
                         age={animal.age} 
                         breed={animal.breed} 
@@ -16,8 +18,8 @@ export default function AnimalContainer({ animals }) {
         })
     }
     return (
-        <Container>
-            {displayAnimals()}
+        <Container className="animal-container" fluid>
+                {displayAnimals()}
         </Container>
     )
 }

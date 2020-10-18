@@ -17,7 +17,8 @@ class App extends Component {
   }
   //filter the animals for ones that have pictures
   filterResponseForAnimalsWithPhotos = (response) => {
-      return response.animals.filter(animal => animal.photos !== [])
+      return response.animals.filter(animal => animal.photos.length !== 0)
+    
   }
 
 componentDidMount() {
